@@ -15,6 +15,8 @@ export class DockerTracer extends Tracer {
     super(lang);
     this.directory = path.resolve(__dirname, lang);
     this.imageName = `tracer-${this.lang}`;
+
+    this.build = this.build.bind(this);
   }
 
   build(release: Release) {
