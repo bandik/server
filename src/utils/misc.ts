@@ -52,6 +52,7 @@ type ExecuteOptions = ExecOptions & {
 }
 
 export function execute(command: string, {stdout, stderr, ...options}: ExecuteOptions = {}): Promise<string> {
+	console.log(command);
   return new Promise((resolve, reject) => {
     const child = child_process.exec(command, options, (error, stdout, stderr) => {
       if (error) return reject(error.code ? new Error(stderr) : error);
