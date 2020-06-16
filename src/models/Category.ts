@@ -12,6 +12,7 @@ export class Category {
   }
 
   refresh() {
+	console.log(this.path);
     this.algorithms = listDirectories(this.path)
       .map(algorithmName => new Algorithm(path.resolve(this.path, algorithmName), algorithmName));
   }
